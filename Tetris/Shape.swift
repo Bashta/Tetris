@@ -130,13 +130,78 @@ class Shape: Hashable, Printable
 			}
 		}
 	}
+	
+	final func rotateBlocks(orientation: Orientation)
+	{
+		if let blockRowColumnTranslation:Array<(columnDiff: Int, rowDiff: Int)> = blockRowColumnPositions[orientation]
+		{
+//8
+			for (idx, (columnDiff:Int, rowDiff:Int)) in enumerate(blockRowColumnTranslation)
+			{
+				blocks[idx].column = column + columnDiff
+				blocks[idx].row = row + rowDiff
+			}
+		}
+	}
+	
 
-}
+	final func lowerShapeByOneRow()
+	{
+		shiftBy(0, rows:1)
+	}
+	
+//9
+	final func shiftBy(columns: Int, rows: Int)
+	{
+		self.column += columns
+		self.row += rows
+		for block in blocks
+		{
+			block.column += columns
+			block.row += rows
+		}
+	}
+
+//10
+	final func moveTo(column: Int, row: Int)
+	{
+		self.column = column
+		self.row = row
+		rotateBlocks(orientation)
+	}
+
+//11
+	final class func random(startingColumn: Int, startingRow: Int) -> Shape
+	{
+		switch Int(arc4random_uniform(numberOfShapeTypes))
+		{
+		case 0:
+			return SquareShape(column: startingColumn, row: startingRow)
+		case 1:
+			return LineShape(column:startingColumn, row:startingRow)
+		case 2:
+			return TShape(column:startingColumn, row:startingRow)
+		case 3:
+			return LShape(column:startingColumn, row:startingRow)
+		case 4:
+			return JShape(column:startingColumn, row:startingRow)
+		case 5:
+			return SShape(column:startingColumn, row:startingRow)
+		default:
+			return ZShape(column:startingColumn, row:startingRow)
+		}
+	}
+	
+}//class end
+
+
 
 func ==(lhs: Shape, rhs: Shape) -> Bool
 {
 	return lhs.row == rhs.row && lhs.column == rhs.column
 }
+
+
 
 
 /******************************DOC******************************
@@ -170,6 +235,20 @@ At #6 we defined a final function which means it cannot be overridden by subclas
 
 #7
 At #7 we introduced conditional assignments. This if conditional first attempts to assign an array into blockRowColumnTranslations after extracting it from the computed dictionary property. If one is not found, the if block is not executed.
+
+#8
+At #8 we introduce the enumerate operator. This allows us to iterate through an array object by defining an index variable - idx - as well as the contents at that index: (columnDiff:Int, rowDiff:Int). This saves us the added step of recovering it from the array, let tuple = blockRowColumnTranslation[idx]. We loop through the blocks and assign them their row and column based on the translations provided by the Tetromino subclass
+
+#9
+At #9, we've included a simple shiftBy(columns: Int, rows: Int) method which will adjust each row and column by rows and columns, respectively.
+
+#10
+At #10 we provide an absolute approach to position modification by setting the column and row properties before rotating the blocks to their current orientation which causes an accurate realignment of all blocks relative to the new row and column properties.
+
+#11
+At #11 we've created a method to generate a random Tetromino shape and you can see that subclasses naturally inherit initializers from their parent class.
+
+
 
 ******************************-----*Class DOC*-----******************************/
 

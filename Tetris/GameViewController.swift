@@ -29,7 +29,8 @@ class GameViewController: UIViewController
 		
 		//Present the scene
 		skView.presentScene(scene)
-		
+		println("passed")
+
 	}
 	
 	override func prefersStatusBarHidden() -> Bool
