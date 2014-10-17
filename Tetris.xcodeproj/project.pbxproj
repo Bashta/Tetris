@@ -35,6 +35,7 @@
 		652CFD8119E353FA00E3BF49 /* JShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652CFD8019E353FA00E3BF49 /* JShape.swift */; };
 		652CFD8319E354C500E3BF49 /* SShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652CFD8219E354C500E3BF49 /* SShape.swift */; };
 		652CFD8519E3554C00E3BF49 /* ZShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652CFD8419E3554C00E3BF49 /* ZShape.swift */; };
+		65A68BD519F1785200E256C7 /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65A68BCD19F1772F00E256C7 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		65BCC2BE19E73484001FD8B2 /* LineShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BCC2BD19E73484001FD8B2 /* LineShape.swift */; };
 		65BCC2C019E73CF2001FD8B2 /* Tetris.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BCC2BF19E73CF2001FD8B2 /* Tetris.swift */; };
 /* End PBXBuildFile section */
@@ -47,7 +48,42 @@
 			remoteGlobalIDString = 65062C4F19DCA5A70014FE7A;
 			remoteInfo = Tetris;
 		};
+		65A68BCC19F1772F00E256C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65A68BC719F1772E00E256C7 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
+			remoteInfo = Alamofire;
+		};
+		65A68BCE19F1772F00E256C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65A68BC719F1772E00E256C7 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
+			remoteInfo = AlamofireTests;
+		};
+		65A68BD219F177F900E256C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65A68BC719F1772E00E256C7 /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = Alamofire;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		65A68BD419F1783000E256C7 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				65A68BD519F1785200E256C7 /* Alamofire.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		65062C5019DCA5A70014FE7A /* Tetris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tetris.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +118,7 @@
 		652CFD8019E353FA00E3BF49 /* JShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JShape.swift; sourceTree = "<group>"; };
 		652CFD8219E354C500E3BF49 /* SShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SShape.swift; sourceTree = "<group>"; };
 		652CFD8419E3554C00E3BF49 /* ZShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZShape.swift; sourceTree = "<group>"; };
+		65A68BC719F1772E00E256C7 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		65BCC2BD19E73484001FD8B2 /* LineShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineShape.swift; sourceTree = "<group>"; };
 		65BCC2BF19E73CF2001FD8B2 /* Tetris.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tetris.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,6 +144,7 @@
 		65062C4719DCA5A70014FE7A = {
 			isa = PBXGroup;
 			children = (
+				65A68BC719F1772E00E256C7 /* Alamofire.xcodeproj */,
 				65062C5219DCA5A70014FE7A /* Tetris */,
 				65062C6C19DCA5A70014FE7A /* TetrisTests */,
 				65062C5119DCA5A70014FE7A /* Products */,
@@ -182,6 +220,15 @@
 			path = Sounds;
 			sourceTree = "<group>";
 		};
+		65A68BC819F1772E00E256C7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				65A68BCD19F1772F00E256C7 /* Alamofire.framework */,
+				65A68BCF19F1772F00E256C7 /* AlamofireTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		65BCC2BB19E72DC4001FD8B2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,10 +266,12 @@
 				65062C4C19DCA5A70014FE7A /* Sources */,
 				65062C4D19DCA5A70014FE7A /* Frameworks */,
 				65062C4E19DCA5A70014FE7A /* Resources */,
+				65A68BD419F1783000E256C7 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				65A68BD319F177F900E256C7 /* PBXTargetDependency */,
 			);
 			name = Tetris;
 			productName = Tetris;
@@ -276,6 +325,12 @@
 			mainGroup = 65062C4719DCA5A70014FE7A;
 			productRefGroup = 65062C5119DCA5A70014FE7A /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 65A68BC819F1772E00E256C7 /* Products */;
+					ProjectRef = 65A68BC719F1772E00E256C7 /* Alamofire.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				65062C4F19DCA5A70014FE7A /* Tetris */,
@@ -283,6 +338,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		65A68BCD19F1772F00E256C7 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 65A68BCC19F1772F00E256C7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		65A68BCF19F1772F00E256C7 /* AlamofireTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AlamofireTests.xctest;
+			remoteRef = 65A68BCE19F1772F00E256C7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		65062C4E19DCA5A70014FE7A /* Resources */ = {
@@ -353,6 +425,11 @@
 			isa = PBXTargetDependency;
 			target = 65062C4F19DCA5A70014FE7A /* Tetris */;
 			targetProxy = 65062C6A19DCA5A70014FE7A /* PBXContainerItemProxy */;
+		};
+		65A68BD319F177F900E256C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			targetProxy = 65A68BD219F177F900E256C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
